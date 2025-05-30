@@ -1,0 +1,1 @@
+rootProject.name = "Google10000Words"
