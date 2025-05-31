@@ -37,6 +37,9 @@ public class DictionaryMethods {
 
     String WordWithMostVowels()
     {
+        UtilityMethods tool = new UtilityMethods();
+
+        //this.words.stream().filter(word -> )
         return "test";
     }
 
