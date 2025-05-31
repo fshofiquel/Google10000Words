@@ -13,6 +13,7 @@ public class Google10000Words {
         System.out.println("The Last Word on the List Alphabetically Is: " + analyzer.LastWordAlphabetically());
         System.out.println("The Longest Word is: " + analyzer.LongestWord());
         System.out.println(analyzer.LongestWordThatEndsWithZZ());
+        System.out.println(analyzer.LongestWordThatEndsWithFF());
     }
 }
 

@@ -60,6 +60,9 @@ public class DictionaryMethods {
 
     String LongestWordThatEndsWithFF()
     {
-        return "test";
+        List<String> ListOfLongestWordsEndingWithFF = this.words.stream().filter(words -> words.endsWith("ff")).
+                sorted(Comparator.comparing(String::length)).toList();
+
+        return ListOfLongestWordsEndingWithFF.getLast();
     }
 }
