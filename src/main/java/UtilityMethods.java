@@ -16,4 +16,12 @@ public class UtilityMethods {
     {
         return true;
     }
+
+    int CompareTwoWords(String Word1, String Word2)
+    {
+        int Word1Length = Word1.length();
+        int Word2Length = Word2.length();
+
+        return Integer.compare(Word2Length, Word1Length);
+    }
 }

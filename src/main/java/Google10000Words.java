@@ -11,6 +11,8 @@ public class Google10000Words {
         System.out.println("The Total Number of Words is: " + analyzer.WordCount());
         System.out.println("The First Word on the List Alphabetically Is: " + analyzer.FirstWordAlphabetically());
         System.out.println("The Last Word on the List Alphabetically Is: " + analyzer.LastWordAlphabetically());
+        System.out.println("The Longest Word is: " + analyzer.LongestWord());
+        System.out.println(analyzer.LongestWordThatEndsWithZZ());
     }
 }
 
