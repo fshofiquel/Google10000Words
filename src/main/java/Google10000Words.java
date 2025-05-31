@@ -1,7 +1,8 @@
 import java.io.IOException;
 import java.util.List;
 
-// Main class that only initializes everything. No work will be done here will be  creating objects and variables.
+// Main class that only initializes everything. No work will be done here will be  creating
+// objects and variables.
 public class Google10000Words {
     public static void main(String[] args) throws IOException
     {
@@ -12,8 +13,8 @@ public class Google10000Words {
         System.out.println("The First Word on the List Alphabetically Is: " + analyzer.FirstWordAlphabetically());
         System.out.println("The Last Word on the List Alphabetically Is: " + analyzer.LastWordAlphabetically());
         System.out.println("The Longest Word is: " + analyzer.LongestWord());
-        System.out.println(analyzer.LongestWordThatEndsWithZZ());
-        System.out.println(analyzer.LongestWordThatEndsWithFF());
+        System.out.println("The Longest Word Ending with zz: " + analyzer.LongestWordThatEndsWithZZ());
+        System.out.println("The Longest Word Ending with ff: " + analyzer.LongestWordThatEndsWithFF());
     }
 }
 
