@@ -5,6 +5,7 @@ public class UtilityMethods {
     {
         return true;
     }
+
     int VowelCounter(String word)
     {
         return 0;
