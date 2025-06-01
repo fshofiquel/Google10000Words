@@ -4,6 +4,7 @@ import java.util.List;
 public class DictionaryMethods {
 
     private final List<String> words;
+    private UtilityMethods tools = new UtilityMethods();
 
     // This is the driver for this class and where most of the work should be done.
     public DictionaryMethods(List<String> words)
@@ -41,6 +42,7 @@ public class DictionaryMethods {
 
     String WordWithMostVowels()
     {
+        //this.words.stream().filter(word -> tools.VowelCounter(word));
         return "test";
     }
 
@@ -49,26 +51,18 @@ public class DictionaryMethods {
         return "test";
     }
 
-    String LongestWordThatEndsWithZZ()
+
+    String LongestWordSpecialEnding(String SpecialCase)
     {
         // This is a little complex looking however all it is doing is running lambda that is
-        // checking and grabbing every word that ends with zz and then sorts the words by length
-        // using a comparator. Afterward simply store all that information into a list and then
-        // finally output the last index which would be the longest word ending with zz.
-        List<String> ListOfLongestWordsEndingWithZZ =
-                this.words.stream().filter(words -> words.endsWith("zz"))
-                        .sorted(Comparator.comparing(String::length)).toList();
+        // checking and grabbing every word that ends with whatever SpecialCase is that is
+        // inputted into the method and then sorts the words by length using a comparator.
+        // Afterward simply store all that information into a list and then
+        // finally output the last index which would be the longest word ending with whatever is
+        // specified by SpecialCase.
+        List<String> ListOfLongestWordSpecialEnding =
+                this.words.stream().filter(word -> word.endsWith(SpecialCase)).sorted(Comparator.comparing(String::length)).toList();
 
-        return ListOfLongestWordsEndingWithZZ.getLast();
-    }
-
-    String LongestWordThatEndsWithFF()
-    {
-        // Same process as the zz method but instead do it for ff.
-        List<String> ListOfLongestWordsEndingWithFF =
-                this.words.stream().filter(words -> words.endsWith("ff"))
-                        .sorted(Comparator.comparing(String::length)).toList();
-
-        return ListOfLongestWordsEndingWithFF.getLast();
+        return ListOfLongestWordSpecialEnding.getLast();
     }
 }

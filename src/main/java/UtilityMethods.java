@@ -1,5 +1,8 @@
 // These functions may or not be used. We'll have to see but for now moving to its own thing.
 
+import java.util.Comparator;
+import java.util.List;
+
 public class UtilityMethods {
     boolean VowelChecker(char c)
     {
@@ -17,11 +20,4 @@ public class UtilityMethods {
         return true;
     }
 
-    int CompareTwoWords(String Word1, String Word2)
-    {
-        int Word1Length = Word1.length();
-        int Word2Length = Word2.length();
-
-        return Integer.compare(Word2Length, Word1Length);
-    }
 }
