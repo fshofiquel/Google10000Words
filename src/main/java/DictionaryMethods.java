@@ -16,24 +16,24 @@ public class DictionaryMethods {
     }
 
     // Counts the numbers of words in a list.
-    int WordCount()
+    public int WordCount()
     {
         return Math.toIntExact(this.words.stream().filter(word -> !word.isEmpty()).count());
     }
 
-    String FirstWordAlphabetically()
+    public String FirstWordAlphabetically()
     {
         // Since the list is already sorted just go to the first index.
         return words.getFirst();
     }
 
-    String LastWordAlphabetically()
+    public String LastWordAlphabetically()
     {
         // Since its sorted same logic as the previous
         return words.getLast();
     }
 
-    String LongestWord()
+    public String LongestWord()
     {
         // Using the Comparator method you can use comparing to simply run through and compare
         // each word and sort it by smallest to longest
@@ -41,7 +41,7 @@ public class DictionaryMethods {
         return words.getLast();
     }
 
-    String WordWithMostVowels()
+    public String WordWithMostVowels()
     {
         // Uses stream and finds the word that contains the most vowels by passing them into
         // tools object and accessing the VowelsChecker Method. This uses the max method to
@@ -53,7 +53,7 @@ public class DictionaryMethods {
     }
 
     // Similar as the other one but for longest string of vowels at the end.
-    String WordEndingWithMostVowels()
+    public String WordEndingWithMostVowels()
     {
         Optional<String> longestEndingVowel =
                 this.words.stream().max(Comparator.comparingInt(tools::LongestEndingVowels));
@@ -61,7 +61,7 @@ public class DictionaryMethods {
     }
 
 
-    String LongestWordSpecialEnding(String SpecialCase)
+    public String LongestWordSpecialEnding(String SpecialCase)
     {
         // This is a little complex looking however all it is doing is running lambda that is
         // checking and grabbing every word that ends with whatever SpecialCase is that is

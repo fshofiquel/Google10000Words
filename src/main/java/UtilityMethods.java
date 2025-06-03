@@ -3,14 +3,14 @@
 public class UtilityMethods {
 
     // Simple Boolean checker to see if a character is a vowel
-    boolean IsVowel(char character)
+    public boolean IsVowel(char character)
     {
         return character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u';
     }
 
     // This for loop runs through each character in a string and finds out if that letter is a
     // vowel. If it is a vowel then vowelCount++
-    int VowelChecker(String word)
+    public int VowelChecker(String word)
     {
         int vowelCount = 0;
 
@@ -24,7 +24,7 @@ public class UtilityMethods {
     // vowels from the end then you instead start from the back and then decriment by 1 and check
     // if the letter is a vowel. If it is then it will vowelCount++ if it is not then exit the
     // string right away and return the value.
-    int LongestEndingVowels(String word)
+    public int LongestEndingVowels(String word)
     {
         int vowelCount = 0;
         int index = word.length() - 1;
