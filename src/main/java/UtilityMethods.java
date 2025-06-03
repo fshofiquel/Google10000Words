@@ -1,23 +1,41 @@
-// These functions may or not be used. We'll have to see but for now moving to its own thing.
-
-import java.util.Comparator;
-import java.util.List;
+// Used to keep DictionaryMethods from being crowded and moves the more cluttered code to here.
 
 public class UtilityMethods {
-    boolean VowelChecker(char c)
+
+    // Simple Boolean checker to see if a character is a vowel
+    boolean IsVowel(char character)
     {
-        return true;
+        return character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u';
     }
 
-    int VowelCounter(String word)
+    // This for loop runs through each character in a string and finds out if that letter is a
+    // vowel. If it is a vowel then vowelCount++
+    int VowelChecker(String word)
     {
-        return 0;
+        int vowelCount = 0;
+
+        for (char character : word.toCharArray()) {
+            if (IsVowel(character)) vowelCount++;
+        }
+        return vowelCount;
     }
 
-
-    boolean CheckIfEndsWithMultipleVowels(String word)
+    // Almost similar to the other one however since we are looking for the longest chain of
+    // vowels from the end then you instead start from the back and then decriment by 1 and check
+    // if the letter is a vowel. If it is then it will vowelCount++ if it is not then exit the
+    // string right away and return the value.
+    int LongestEndingVowels(String word)
     {
-        return true;
-    }
+        int vowelCount = 0;
+        int index = word.length() - 1;
 
+        for (int i = index; i >= 0; i--) {
+            char character;
+            character = word.charAt(i);
+
+            if (IsVowel(character)) vowelCount++;
+            else break;
+        }
+        return vowelCount;
+    }
 }

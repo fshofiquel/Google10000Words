@@ -15,6 +15,8 @@ public class Google10000Words {
         System.out.println("The Longest Word is: " + analyzer.LongestWord());
         System.out.println("The Longest Word Ending with zz: " + analyzer.LongestWordSpecialEnding("zz"));
         System.out.println("The Longest Word Ending with ff: " + analyzer.LongestWordSpecialEnding("ff"));
+        System.out.println("The Word with the most Vowels:  " + analyzer.WordWithMostVowels());
+        System.out.println("The Word Ending with most Vowels: " + analyzer.WordEndingWithMostVowels());
     }
 }
 

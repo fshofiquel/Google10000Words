@@ -1,10 +1,11 @@
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class DictionaryMethods {
 
     private final List<String> words;
-    private UtilityMethods tools = new UtilityMethods();
+    private final UtilityMethods tools = new UtilityMethods();
 
     // This is the driver for this class and where most of the work should be done.
     public DictionaryMethods(List<String> words)
@@ -42,13 +43,21 @@ public class DictionaryMethods {
 
     String WordWithMostVowels()
     {
-        //this.words.stream().filter(word -> tools.VowelCounter(word));
-        return "test";
+        // Uses stream and finds the word that contains the most vowels by passing them into
+        // tools object and accessing the VowelsChecker Method. This uses the max method to
+        // compare each int value that is returned after a string from words is passed through
+        // and finds out which word is has the most vowels.
+        Optional<String> sortedByVowels =
+                this.words.stream().max(Comparator.comparingInt(tools::VowelChecker));
+        return sortedByVowels.orElse(null);
     }
 
-    String WordEndingWithMostValues()
+    // Similar as the other one but for longest string of vowels at the end.
+    String WordEndingWithMostVowels()
     {
-        return "test";
+        Optional<String> longestEndingVowel =
+                this.words.stream().max(Comparator.comparingInt(tools::LongestEndingVowels));
+        return longestEndingVowel.orElse(null);
     }
 
 
@@ -60,9 +69,9 @@ public class DictionaryMethods {
         // Afterward simply store all that information into a list and then
         // finally output the last index which would be the longest word ending with whatever is
         // specified by SpecialCase.
-        List<String> ListOfLongestWordSpecialEnding =
+        List<String> listOfLongestWordSpecialEnding =
                 this.words.stream().filter(word -> word.endsWith(SpecialCase)).sorted(Comparator.comparing(String::length)).toList();
 
-        return ListOfLongestWordSpecialEnding.getLast();
+        return listOfLongestWordSpecialEnding.getLast();
     }
 }
